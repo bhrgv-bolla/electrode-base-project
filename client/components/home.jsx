@@ -2,13 +2,17 @@ import React, {PropTypes} from "react";
 import {connect} from "react-redux";
 import Notifications from "react-notify-toast";
 import {toggleCheck, incNumber, decNumber} from "../actions";
+import {OdrToolbar} from "odr-toolbar";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class Home extends React.Component {
   render() {
     const props = this.props;
     const {checked, value} = props;
     return (
+      <MuiThemeProvider>
       <div>
+        <OdrToolbar/>
         <Notifications />
         <h1>Hello <a href={"https://github.com/electrode-io"}>{"Electrode"}</a></h1>
         <div>
@@ -24,6 +28,7 @@ class Home extends React.Component {
           </div>
         </div>
       </div>
+    </MuiThemeProvider>
     );
   }
 }
